@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Referencia CDN de BootStrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Referencia CDN a FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Referencia CDN a BoxIcons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Referencia CDN a Grid JS -->
+    <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+    <!-- Referencia a Estilos personalizados -->
+    <link rel="stylesheet" href="{% static 'CSS/Styles.css' %}">
+    <title>{% block tittle %}{% endblock %}</title>
+</head>
+<body>
+    
+    <div class="row mx-0">
+        <div class="col-auto px-0">
+            {% include 'Bases/BarraLateral.html' %}
+        </div>
+        <div class="col-md-9 my-4 px-3">
+            <div class="container">
+                {% block content %} {% endblock %}
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Referencia CDN de BootStrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Referencia CDN de Grid JS -->
+    <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
+    <!-- Referencia JS personalizados -->
+    <script src="{% static 'JS/main.js' %}"></script>
+    <!-- Referencia a JS con DataTable personalizado -->
+    <script src="{% static 'JS/DataTables/Categorias_DataTable.js' %}"></script>
+</body>
+</html>
