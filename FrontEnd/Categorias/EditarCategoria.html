@@ -1,0 +1,48 @@
+{% extends 'Bases/Base.html' %}
+
+{% block tittle %}Editando categorias{% endblock %}
+
+{% block content %}
+    <div class="modal fade" id="ModalEditarCategoria" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="Editando categorias" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Editar categoria</h1>
+                    <a href="javascript:history.back()" class="btn-close" aria-label="Close"></a>
+                </div>
+                <form action="{% url 'EditarCategoria' CategoriaForm.instance.pk %}" method="POST">{% csrf_token %}
+                    <div class="modal-body">
+                        <div class="container">
+                            <table class="table table-borderless table-striped table-light table-hover">
+                                <thead>
+                                    <tr><th colspan="2" class="bg-dark text-light bg-gradient text-center fw-bolder fs-4">Categoria</th></tr>
+                                </thead>
+                                <tbody>
+                                    {% for field in CategoriaForm %}
+                                        <tr>
+                                            <td class="fw-semibold align-middle">{{ field.label }}</td>
+                                            <td>{{ field }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="javascript:history.back()" class="btn btn-outline-dark">Cerrar</a>
+                        <button type="submit" class="btn btn-outline-success">Editar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    {% include 'Bases/Alertas/Alerta.html' %}
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var myModal = new bootstrap.Modal(document.getElementById('ModalEditarCategoria'));
+            myModal.show();
+        });
+    </script>
+{% endblock %}
