@@ -1,0 +1,13 @@
+{% extends 'Bases/Base.html' %}
+
+{% block tittle %}Categorias{% endblock %}
+
+{% block content %}
+    {% include 'Categorias/ModalAgregarCategoria.html' with modal='modalAgregarcategoria' %}
+    <div class="header">
+        <h1 class="text-light">Categorias</h1>
+    </div>
+    {% include 'Bases/Insertar.html' with modal='modalAgregarcategoria' titulo='Agregar categoria' %}
+    <hr>
+    <div id="Tabla_Categorias"></div>
+{% endblock %}

@@ -1,0 +1,8 @@
+<!-- Activador de Sweet Alert -->
+{% if messages %}
+    <div id="activador_alerta" style="display: none;">
+        {% for mensaje in messages %}
+            <span id="mensaje_{{ forloop.counter }}" style="display: none;">{{ mensaje }}</span>
+        {% endfor %}
+    </div>
+{% endif %}

@@ -1,0 +1,13 @@
+{% extends 'Bases/Base.html' %}
+
+{% block tittle %}Productos{% endblock %}
+
+{% block content %}
+    <div class="header">
+        <h1 class="text-light">Productos</h1>
+    </div>
+    {% include 'Bases/Insertar.html' with modal='modalAgregarProducto' titulo='Agregar producto' %}
+    <hr>
+    <div id="Tabla_Productos"></div>
+    {% include 'Productos/modalAgregarProducto.html' %}
+{% endblock %}

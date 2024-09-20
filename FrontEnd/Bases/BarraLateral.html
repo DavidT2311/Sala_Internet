@@ -11,7 +11,7 @@
     </div>
     <div class="menu">
         <div class="enlace" onclick="window.location.href='{% url 'index' %}'">
-            <i class="bx bx-grid-alt"></i>
+            <i class='bx bx-home-alt'></i>
             <span>Dashboard</span>
         </div>
         <div class="enlace">
@@ -31,14 +31,14 @@
             <span>Metodos Pago</span>
         </div>
         <div class="enlace" onclick="window.location.href='{% url 'VerCategorias' %}'">
-            <i class='bx bx-category'></i>
+            <i class='bx bx-category-alt'></i>
             <span>Categorias</span>
         </div>
-        <div class="enlace">
+        <div class="enlace" onclick="window.location.href='{% url 'VerProductos' %}'">
             <i class='bx bx-pencil'></i>
             <span>Productos</span>
         </div>
-        <div class="enlace">
+        <div class="enlace" onclick="window.location.href='{% url 'VerVentaProductos' %}'">
             <i class='bx bx-shopping-bag'></i>
             <span>Venta Producto</span>
         </div>

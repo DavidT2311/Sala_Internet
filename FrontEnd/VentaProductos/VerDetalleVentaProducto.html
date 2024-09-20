@@ -1,0 +1,44 @@
+{% extends 'Bases/Base.html' %}
+
+{% block tittle %}Detalles de la venta de producto{% endblock %}
+
+{% block content %}
+    <div class="modal fade" id="ModalVerDetalleVentaProducto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="Editando productos" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Detalles de la venta del producto</h1>
+                    <a href="javascript:history.back()" class="btn-close" aria-label="Close"></a>
+                </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <table class="table table-borderless table-striped table-light table-hover">
+                                <thead>
+                                    <tr><th colspan="2" class="bg-dark text-light bg-gradient text-center fw-bolder fs-4">Venta productos</th></tr>
+                                </thead>
+                                <tbody>
+                                    {% for field in VentaProductoForm %}
+                                        <tr>
+                                            <td class="fw-semibold align-middle">{{ field.label }}</td>
+                                            <td>{{ field }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="javascript:history.back()" class="btn btn-outline-dark">Cerrar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var myModal = new bootstrap.Modal(document.getElementById('ModalVerDetalleVentaProducto'));
+            myModal.show();
+        });
+    </script>
+{% endblock %}

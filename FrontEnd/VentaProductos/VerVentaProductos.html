@@ -1,0 +1,13 @@
+{% extends 'Bases/Base.html' %}
+
+{% block tittle %}Venta de productos{% endblock %}
+
+{% block content %}
+    <div class="header">
+        <h1 class="text-light">Ventas de productos</h1>
+    </div>
+    {% include 'Bases/Insertar.html' with modal='modalAgregarVentaProducto' titulo='Agregar venta producto' %}
+    <hr>
+    <div id="Tabla_Venta_Productos"></div>
+    {% include 'VentaProductos/modalAgregarVentaProducto.html' %}
+{% endblock %}

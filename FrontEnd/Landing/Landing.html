@@ -1,0 +1,11 @@
+{% extends 'Bases/BaseSola.html' %}
+
+{% block tittle %}Pagina de aterrizaje{% endblock %}
+
+{% block content %}
+    <header class="header" style="justify-content: space-between;">
+        {% include 'Bases/Logo.html' %}
+        {% include 'Bases/Barra.html' %}
+    </header>
+    {% include 'Landing/ModalLogin.html' %}
+{% endblock %}

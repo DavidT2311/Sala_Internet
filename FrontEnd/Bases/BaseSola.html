@@ -13,29 +13,19 @@
     <!-- Referencia CDN a Grid JS -->
     <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
     <!-- Referencia a Estilos personalizados -->
-    <link rel="stylesheet" href="{% static 'CSS/Styles.css' %}">
-    <!-- Referencia a Estilos personalizados -->
     <link rel="stylesheet" href="{% static 'CSS/LandingStyles.css' %}">
     <!-- Referencia al icono de la pagina -->
     <link rel="shortcut icon" type="image/png" href="{% static 'Assets/Icon/favicon.png' %}"/>
-
     <title>{% block tittle %}{% endblock %}</title>
 </head>
 <body>
-    
-    <div class="row mx-0">
-        <div class="px-0">
-            {% include 'Bases/BarraLateral.html' %}
-        </div>
-        {% block content %} {% endblock %}
-    </div>
 
+    {% block content %} {% endblock %}
     <!-- Referencia CDN de BootStrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <!-- Referencia CDN de SweetAlert2 -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Referencia CDN de Grid JS -->
     <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
+    
     <!-- Referencia a JS con DataTable personalizado -->
     <script src="{% static 'JS/DataTables/Categorias_DataTable.js' %}"></script>
     <!-- Referencia a JS con DataTable personalizado -->
@@ -44,9 +34,5 @@
     <script src="{% static 'JS/DataTables/Venta_Producto_DataTable.js' %}"></script>
     <!-- Referencia JS personalizados -->
     <script src="{% static 'JS/main.js' %}"></script>
-    <!-- Referencia a JS Personalizado -->
-    <script src="{% static 'JS/Alertas/Alerta_Success.js' %}" defer></script>
-    <!-- Referencia a JS Personalizado -->
-    <script src="{% static 'JS/Alertas/Alerta_Error.js' %}" defer></script>
 </body>
 </html>
